@@ -8,8 +8,8 @@ debugger
 
  userRouter.post("/signIn",UserController.signIn)
 
-// userRouter.get("/myProfile",UserController.myProfile)
+ userRouter.get("/myProfile",UserController.myProfile)
 
-// userRouter.put("/updateProfile",UserController.updateProfile)
+ userRouter.put("/updateProfile",UserController.updateProfile)
 
 export default userRouter;
