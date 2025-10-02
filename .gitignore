@@ -4,6 +4,7 @@ backend/.env
 backend/npm-debug.log*
 backend/yarn-debug.log*
 backend/yarn-error.log*
+backend/dist/            # <- Add this to ignore compiled JS
 
 # Flutter / Dart
 frontend/.dart_tool/
