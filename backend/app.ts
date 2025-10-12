@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config(); // Load variables from .env
+
 import express from "express";
 import cors from "cors";
-import { json } from "stream/consumers";
 import appLogger from "./src/middleware/app_logger"
 import { connectToDatabase } from "./src/config/mongodb_client";
 import userRouter from "./src/router/user_router";
@@ -13,10 +13,11 @@ const app : express.Application = express();
 
 
 debugger
+const portNumber = process.env.PORT ? parseInt(process.env.PORT, 10) : 8000;
 //const hostName = "10.0.2.2";
 const hostName = "0.0.0.0"; // this will accept any host
 //const hostName = "192.168.31.180"; 
-const portNumber = process.env.PORT || 8000;
+
 
 
 //const portNumber = process.env.PORT || 59242;
@@ -39,7 +40,13 @@ app.use("/v1/note",noteRouter)
 //     console.log("Welcome to Note App backend service");
 // })
 // Start server
-app.listen(portNumber, async () => {
+// app.listen(portNumber, async () => {
+//   await connectToDatabase();
+//   console.log(`✅ Server running on port ${portNumber}`);
+//   console.log("Welcome to Note App backend service");
+// });
+
+app.listen(portNumber, hostName, async () => {
   await connectToDatabase();
   console.log(`✅ Server running on port ${portNumber}`);
   console.log("Welcome to Note App backend service");
