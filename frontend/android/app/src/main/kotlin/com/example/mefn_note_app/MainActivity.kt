@@ -1,4 +1,4 @@
-package com.example.mefn_note_app
+package com.example.mefn_note_app_deploy
 
 import io.flutter.embedding.android.FlutterActivity
 

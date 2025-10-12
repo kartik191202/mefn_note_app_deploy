@@ -1,4 +1,4 @@
-name: mefn_note_app
+name: mefn_note_app_deploy
 description: "A new Flutter NoteApp project , for Resume"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

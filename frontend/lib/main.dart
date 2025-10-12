@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mefn_note_app/cubit/note/note_cubit.dart';
-import 'package:mefn_note_app/cubit/user/user_cubit.dart';
-import 'package:mefn_note_app/ui/sign_in_page.dart';
+import 'package:mefn_note_app_deploy/cubit/note/note_cubit.dart';
+import 'package:mefn_note_app_deploy/cubit/user/user_cubit.dart';
+import 'package:mefn_note_app_deploy/ui/sign_in_page.dart';
 import 'cubit/auth/auth_cubit.dart';
 import 'cubit/credential/credential_cubit.dart';
-import 'package:mefn_note_app/router/on_generate_route.dart';
-import 'package:mefn_note_app/ui/home_page.dart';
-import 'package:mefn_note_app/ui/sign_in_page.dart';
-import 'package:mefn_note_app/ui/sign_up_page.dart';
+import 'package:mefn_note_app_deploy/router/on_generate_route.dart';
+import 'package:mefn_note_app_deploy/ui/home_page.dart';
+import 'package:mefn_note_app_deploy/ui/sign_in_page.dart';
+import 'package:mefn_note_app_deploy/ui/sign_up_page.dart';
 
 void main() {
   runApp(const MyApp());
