@@ -1,30 +1,23 @@
-// import { MongoClient } from 'mongodb';
+import { MongoClient, Db } from "mongodb";
 
-// const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-// const client = new MongoClient(uri);
+let mongoDb: Db;
 
-// export async function getDataBase(dbName: string) {
-//   await client.connect();
-//   return client.db(dbName);
-// }
-
-
-
-
-import { MongoClient,Db } from "mongodb";
-
-let mongoDb : Db
-
-export async function connectToDatabase(){
-//     const url = "mongodb://localhost:27017";    
-//   when you copy from mongo it will give you this url but 
-//   we need to change this from ip address because name will not work here
-  const url = "mongodb://127.0.0.1:27017";
-  const client  = new MongoClient(url);
-  mongoDb = client.db("notedb")
-  console.log("MongoDB database connect successfully")
+export async function connectToDatabase() {
+  try {
+    const url = process.env.DB_URI!; // Use the DB_URI from environment variables
+    const client = new MongoClient(url);
+    await client.connect();
+    mongoDb = client.db(); // If your DB name is in the URI, this will use it
+    console.log("✅ MongoDB database connected successfully");
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error);
+    process.exit(1); // Stop the server if DB connection fails
+  }
 }
 
-export function getDataBase(){
-    return mongoDb
+export function getDataBase(): Db {
+  if (!mongoDb) {
+    throw new Error("Database not connected. Call connectToDatabase() first.");
+  }
+  return mongoDb;
 }
