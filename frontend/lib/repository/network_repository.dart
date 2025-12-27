@@ -19,8 +19,13 @@ class NetworkRepository {
   // For Android emulator: "http://10.0.2.2:8000"
   // For real device on same network: "http://<your-local-ip>:8000" (e.g., "http://192.168.1.100:8000")
   // For localhost development: "http://127.0.0.1:8000" or "http://localhost:8000"
+
+  //for local testing with android emulator
+  // static const String _baseUrl =
+  //     "http://10.0.2.2:8000"; // Change this to your backend's IP
+  //for real device testing
   static const String _baseUrl =
-      "http://10.0.2.2:8000"; // Change this to your backend's IP
+      "https://mefn-note-app-deploy.onrender.com"; // ✅ live backend
 
   String _endPoint(String endPoint) {
     return "$_baseUrl/v1/$endPoint";
